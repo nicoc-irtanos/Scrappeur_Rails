@@ -37,6 +37,7 @@ require 'open-uri'
   end
 
   def perform
+    Crypto.delete_all
     get_crytocurrencies_names
     get_crytocurrencies_prices
     hashfilling
