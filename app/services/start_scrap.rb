@@ -27,12 +27,13 @@ class StartScrap
       s = 0
       while s < @cryptonames.length
         @hash[@cryptonames[s]] = @prices[s]
+        save
         s = s + 1
       end
     end
   end
 
   def save
-
+    Crypto.create(name: @cryptonames[s], value: @prices[s])
   end
 end
