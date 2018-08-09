@@ -1,2 +1,10 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<select>
+  <%= Crypto.all.each do |crypto| %>
+  <option value=<%= crypto.name %>><%= crypto.name%>
+  <% end %>
+  <%= form_tag(crypto_index_path, method: :post) do |f| %>
+  <%= submit_tag 'Go' %>
+  <% end %>
+</select>
+  
