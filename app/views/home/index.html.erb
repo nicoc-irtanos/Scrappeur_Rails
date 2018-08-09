@@ -1,10 +1,5 @@
 <%= form_tag( crypto_index_path, method: :post) do |f| %>
-
-<% select_tag "Crypto", raw(Crypto.all.each do |crypto| <option value=<%= crypto.name %>><%= crypto.name%></option>)%>
-  <%= Crypto.all.each do |crypto| %>
-    <option value=<%= crypto.name %>><%= crypto.name%>
-  <% end %>
-</select>
+<%= select_tag "crypto", options_from_collection_for_select(Crypto.all, "id", "name") %>
 <%= submit_tag 'Go' %>
 <% end %>
   
